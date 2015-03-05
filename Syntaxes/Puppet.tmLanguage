@@ -54,6 +54,39 @@
 			<array>
 				<dict>
 					<key>begin</key>
+					<string>((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)\s*</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.puppet</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.puppet</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.assignment.puppet</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=,|\))</string>
+					<key>name</key>
+					<string>meta.function.argument.default.puppet</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#parameter-default-types</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>\b(inherits)\b\s+</string>
 					<key>captures</key>
 					<dict>
